@@ -28,4 +28,9 @@ export const GET_READING_LIST_URL = `${COMIXED_API_ROOT}/lists/\${id}`;
 export const CREATE_READING_LIST_URL = `${COMIXED_API_ROOT}/lists`;
 export const SAVE_READING_LIST_URL = `${COMIXED_API_ROOT}/lists/\${id}`;
 
+export const GET_SMART_READING_LISTS_URL = `${COMIXED_API_ROOT}/smartlists`;
+export const GET_SMART_READING_LIST_URL = `${COMIXED_API_ROOT}/smartlists/\${id}`;
+export const CREATE_SMART_READING_LIST_URL = `${COMIXED_API_ROOT}/smartlists`;
+export const SAVE_SMART_READING_LIST_URL = `${COMIXED_API_ROOT}/smartlists/\${id}`;
+
 export const GET_BUILD_DETAILS_URL = `${COMIXED_API_ROOT}/core/build-details`;

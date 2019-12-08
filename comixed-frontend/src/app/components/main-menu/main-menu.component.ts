@@ -77,6 +77,14 @@ export class MainMenuComponent implements OnInit {
             icon: 'fas fa-glasses',
             routerLink: ['/lists'],
             visible: this.authenticationAdaptor.authenticated
+          },
+          {
+            label: this.translateService.instant(
+                'main-menu.item.library.smart-reading-lists'
+            ),
+            icon: 'fas fa-lightbulb',
+            routerLink: ['/smartlists'],
+            visible: this.authenticationAdaptor.authenticated
           }
         ]
       },

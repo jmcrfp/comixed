@@ -26,6 +26,7 @@ import { MissingComicsPageComponent } from 'app/library/pages/missing-comics-pag
 import { MultiComicScrapingPageComponent } from 'app/library/pages/multi-comic-scraping-page/multi-comic-scraping-page.component';
 import { ReadingListPageComponent } from 'app/library/pages/reading-list-page/reading-list-page.component';
 import { ReadingListsPageComponent } from 'app/library/pages/reading-lists-page/reading-lists-page.component';
+import { SmartReadingListsPageComponent } from 'app/library/pages/smart-reading-lists-page/smart-reading-lists-page.component';
 import { AdminGuard, ReaderGuard } from 'app/user';
 
 const routes: Routes = [
@@ -67,6 +68,11 @@ const routes: Routes = [
   {
     path: 'lists',
     component: ReadingListsPageComponent,
+    canActivate: [ReaderGuard]
+  },
+  {
+    path: 'smartlists',
+    component: SmartReadingListsPageComponent,
     canActivate: [ReaderGuard]
   },
   {

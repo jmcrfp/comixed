@@ -7,6 +7,7 @@
       "root": "Library",
       "comics": "Comics",
       "reading-lists": "Reading Lists",
+      "smart-reading-lists": "Smart Reading Lists",
       "import": "Import",
       "duplicate-pages": "Duplicate Pages",
       "missing-comics": "Missing Comics",
@@ -499,6 +500,19 @@
       "new-reading-list": "New List"
     }
   },
+  "smart-reading-lists-page": {
+    "title": "Smart Reading Lists",
+    "table": {
+      "headers": {
+        "name": "Name",
+        "summary": "Summary",
+        "comic-count": "Comic Count"
+      }
+    },
+    "button": {
+      "new-smart-reading-list": "New Smart List"
+    }
+  },
   "user-effects": {
     "login": {
       "summary": {
@@ -533,6 +547,7 @@
       },
       "multi-comic-scraping-page": "Scraping",
       "reading-lists-page": "Reading Lists",
+      "smart-reading-lists-page": "Smart Reading Lists",
       "account-page": "Account",
       "help": {
         "root": "Help",

@@ -34,6 +34,7 @@ import { CollectionState } from 'app/library/reducers/collection.reducer';
 export { LibraryAdaptor } from './adaptors/library.adaptor';
 export { SelectionAdaptor } from './adaptors/selection.adaptor';
 export { ReadingListAdaptor } from './adaptors/reading-list.adaptor';
+export { SmartReadingListAdaptor } from './adaptors/smart-reading-list.adaptor';
 export { LibraryDisplayAdaptor } from './adaptors/library-display.adaptor';
 
 interface RouterStateUrl {

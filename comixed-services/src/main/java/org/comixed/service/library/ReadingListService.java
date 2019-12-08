@@ -170,6 +170,34 @@ public class ReadingListService {
     return this.smartReadingListRepository.save(smartReadingList);
   }
 
+  public List<SmartReadingList> getSmartReadingListsForUser(final String email) {
+    this.logger.info("Getting reading lists for user: email={}", email);
+
+    this.logger.debug("Getting owner");
+    final ComiXedUser owner = this.userRepository.findByEmail(email);
+
+    return this.smartReadingListRepository.findAllSmartReadingListsForUser(owner);
+  }
+
+  public SmartReadingList getSmartReadingListForUser(final String email, final long id)
+          throws NoSuchReadingListException {
+    final ComiXedUser user = this.userRepository.findByEmail(email);
+    final Optional<SmartReadingList> smartReadingList = this.smartReadingListRepository.findById(id);
+
+    if (smartReadingList.isPresent()) {
+      final ComiXedUser owner = smartReadingList.get().getOwner();
+
+      if (owner.getId() == user.getId()) {
+        return smartReadingList.get();
+      }
+
+      throw new NoSuchReadingListException(
+              "User is not the owner: user id=" + user.getId() + " owner id=" + owner.getId());
+    }
+
+    throw new NoSuchReadingListException("Invalid reading list: id=" + id);
+  }
+
   public Matcher createMatcher(
       final String type, final boolean not, final String mode, final List<Matcher> matchers) {
     this.logger.debug("Creating Group matcher: type={} not={} mode={}", type, not, mode);

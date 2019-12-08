@@ -38,6 +38,8 @@ import { SelectionAdaptor } from './adaptors/selection.adaptor';
 import { ReadingListEffects } from './effects/reading-list.effects';
 import { ReadingListService } from './services/reading-list.service';
 import { ReadingListAdaptor } from './adaptors/reading-list.adaptor';
+import { SmartReadingListService } from './services/smart-reading-list.service';
+import { SmartReadingListAdaptor } from './adaptors/smart-reading-list.adaptor';
 import { LibraryDisplayAdaptor } from './adaptors/library-display.adaptor';
 import { FilterAdaptor } from 'app/library/adaptors/filter.adaptor';
 import { ComicFilterPipe } from './pipes/comic-filter.pipe';
@@ -67,6 +69,7 @@ import { ScrapingComicListComponent } from 'app/library/components/scraping-comi
 import { MultipleComicScrapingComponent } from 'app/library/components/multiple-comic-scraping/multiple-comic-scraping.component';
 import { ReadingListsPageComponent } from 'app/library/pages/reading-lists-page/reading-lists-page.component';
 import { ReadingListPageComponent } from 'app/library/pages/reading-list-page/reading-list-page.component';
+import { SmartReadingListsPageComponent } from 'app/library/pages/smart-reading-lists-page/smart-reading-lists-page.component';
 import { DuplicatesPageComponent } from './pages/duplicates-page/duplicates-page.component';
 import { DuplicatePagesAdaptors } from 'app/library/adaptors/duplicate-pages.adaptor';
 import { DuplicatePagesService } from 'app/library/services/duplicate-pages.service';
@@ -139,6 +142,7 @@ import { CollectionPageComponent } from './pages/collection-page/collection-page
     MultipleComicScrapingComponent,
     ReadingListsPageComponent,
     ReadingListPageComponent,
+    SmartReadingListsPageComponent,
     ComicFilterPipe,
     MissingComicsPipe,
     DuplicatesPageComponent,
@@ -157,6 +161,8 @@ import { CollectionPageComponent } from './pages/collection-page/collection-page
     DuplicatePagesAdaptors,
     ReadingListService,
     ReadingListAdaptor,
+    SmartReadingListService,
+    SmartReadingListAdaptor,
     DuplicatePagesService,
     CollectionService,
     CollectionAdaptor
