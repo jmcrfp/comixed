@@ -226,4 +226,26 @@ public class ReadingListService {
 
     return matcher;
   }
+
+  public List<Comic> getComicsforSmartReadingList(final String email, final long id)
+          throws NoSuchReadingListException {
+    final ComiXedUser user = this.userRepository.findByEmail(email);
+    final Optional<SmartReadingList> smartReadingList = this.smartReadingListRepository.findById(id);
+
+    if (smartReadingList.isPresent()) {
+      final ComiXedUser owner = smartReadingList.get().getOwner();
+
+      if (owner.getId() == user.getId()) {
+        SmartReadingList smartList =  smartReadingList.get();
+        smartList.ge
+
+      }
+
+      throw new NoSuchReadingListException(
+              "User is not the owner: user id=" + user.getId() + " owner id=" + owner.getId());
+    }
+
+    throw new NoSuchReadingListException("Invalid reading list: id=" + id);
+  }
+
 }

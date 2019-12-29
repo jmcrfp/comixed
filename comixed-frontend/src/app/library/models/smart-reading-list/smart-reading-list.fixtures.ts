@@ -23,6 +23,7 @@ export const SMART_READING_LIST_1: SmartReadingList = {
   id: 1000,
   owner: USER_READER,
   name: 'My Smart Reading List',
-  summary: 'This is my first smart reading list',
-  entries: []
+  summary: 'This is my first smart reading list' // ,
+  // TODO Joao
+  // entries: []
 };

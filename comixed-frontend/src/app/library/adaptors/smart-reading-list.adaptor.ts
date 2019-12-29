@@ -72,8 +72,9 @@ export class SmartReadingListAdaptor {
     this.store.dispatch(
       new SmartReadingListSave({
         reading_smart_list: {
-          ...reading_smart_list,
-          entries: entries
+          ...reading_smart_list // ,
+          // TODO Joao
+          // entries: entries
         }
       })
     );

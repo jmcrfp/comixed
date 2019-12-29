@@ -29,7 +29,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { BreadcrumbAdaptor } from 'app/adaptors/breadcrumb.adaptor';
 import { UserService } from 'app/services/user.service';
 import { UserModule } from 'app/user/user.module';
-import { ReadingListAdaptor } from 'app/library/adaptors/reading-list.adaptor';
+import { SmartReadingListAdaptor } from 'app/library/adaptors/smart-reading-list.adaptor';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
@@ -54,7 +54,7 @@ describe('SmartReadingListsPageComponent', () => {
       ],
       declarations: [SmartReadingListsPageComponent],
       providers: [
-        ReadingListAdaptor,
+        SmartReadingListAdaptor,
         BreadcrumbAdaptor,
         MessageService,
         UserService
@@ -73,19 +73,19 @@ describe('SmartReadingListsPageComponent', () => {
 
   describe('when destroyed', () => {
     beforeEach(() => {
-      spyOn(component.readingListsSubscription, 'unsubscribe');
+      spyOn(component.smartReadingListsSubscription, 'unsubscribe');
       component.ngOnDestroy();
     });
 
     it('unsubscribes from reading list updates', () => {
-      expect(component.readingListsSubscription.unsubscribe).toHaveBeenCalled();
+      expect(component.smartReadingListsSubscription.unsubscribe).toHaveBeenCalled();
     });
   });
 
   describe('when creating a new reading list', () => {
     beforeEach(() => {
       spyOn(router, 'navigateByUrl');
-      component.create_new_reading_list();
+      component.create_new_smart_reading_list();
     });
 
     it('navigates to the create reading list page', () => {

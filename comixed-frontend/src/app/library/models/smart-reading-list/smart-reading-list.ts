@@ -24,5 +24,6 @@ export interface SmartReadingList {
   owner: User;
   name: string;
   summary: string;
-  entries: SmartReadingListEntry[];
+  // TODO joao
+  // entries: SmartReadingListEntry[];
 }

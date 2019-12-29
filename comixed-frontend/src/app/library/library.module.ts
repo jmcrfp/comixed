@@ -27,6 +27,7 @@ import { StoreModule } from '@ngrx/store';
 import * as fromLibrary from './reducers/library.reducer';
 import * as fromSelection from './reducers/selection.reducer';
 import * as fromReadingList from './reducers/reading-list.reducer';
+import * as fromSmartReadingList from './reducers/smart-reading-list.reducer';
 import * as fromFilters from './reducers/filters.reducer';
 import * as fromDupes from './reducers/duplicate-pages.reducer';
 import * as fromCollections from './reducers/collection.reducer';
@@ -38,6 +39,7 @@ import { SelectionAdaptor } from './adaptors/selection.adaptor';
 import { ReadingListEffects } from './effects/reading-list.effects';
 import { ReadingListService } from './services/reading-list.service';
 import { ReadingListAdaptor } from './adaptors/reading-list.adaptor';
+import { SmartReadingListEffects } from './effects/smart-reading-list.effects';
 import { SmartReadingListService } from './services/smart-reading-list.service';
 import { SmartReadingListAdaptor } from './adaptors/smart-reading-list.adaptor';
 import { LibraryDisplayAdaptor } from './adaptors/library-display.adaptor';
@@ -70,6 +72,7 @@ import { MultipleComicScrapingComponent } from 'app/library/components/multiple-
 import { ReadingListsPageComponent } from 'app/library/pages/reading-lists-page/reading-lists-page.component';
 import { ReadingListPageComponent } from 'app/library/pages/reading-list-page/reading-list-page.component';
 import { SmartReadingListsPageComponent } from 'app/library/pages/smart-reading-lists-page/smart-reading-lists-page.component';
+import { SmartReadingListPageComponent } from 'app/library/pages/smart-reading-list-page/smart-reading-list-page.component';
 import { DuplicatesPageComponent } from './pages/duplicates-page/duplicates-page.component';
 import { DuplicatePagesAdaptors } from 'app/library/adaptors/duplicate-pages.adaptor';
 import { DuplicatePagesService } from 'app/library/services/duplicate-pages.service';
@@ -102,6 +105,10 @@ import { CollectionPageComponent } from './pages/collection-page/collection-page
       fromReadingList.reducer
     ),
     StoreModule.forFeature(
+        fromSmartReadingList.SMART_READING_LIST_FEATURE_KEY,
+        fromSmartReadingList.reducer
+    ),
+    StoreModule.forFeature(
       fromFilters.FILTERS_FEATURE_KEY,
       fromFilters.reducer
     ),
@@ -116,6 +123,7 @@ import { CollectionPageComponent } from './pages/collection-page/collection-page
     EffectsModule.forFeature([
       LibraryEffects,
       ReadingListEffects,
+      SmartReadingListEffects,
       DuplicatePagesEffects,
       CollectionEffects
     ]),
@@ -143,6 +151,7 @@ import { CollectionPageComponent } from './pages/collection-page/collection-page
     ReadingListsPageComponent,
     ReadingListPageComponent,
     SmartReadingListsPageComponent,
+    SmartReadingListPageComponent,
     ComicFilterPipe,
     MissingComicsPipe,
     DuplicatesPageComponent,

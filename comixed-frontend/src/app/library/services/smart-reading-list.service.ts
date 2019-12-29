@@ -45,10 +45,10 @@ export class SmartReadingListService {
 
   // TODO joao
   save_smart_reading_list(smart_reading_list: SmartReadingList): Observable<any> {
-    const entries = (smart_reading_list.entries || []).map(entry => entry.comic.id);
+    // const entries = (smart_reading_list.entries || []).map(entry => entry.comic.id);
     const encoded: SaveSmartReadingListRequest = {
       name: smart_reading_list.name,
-      entries: entries,
+      entries: [], // entries,
       summary: smart_reading_list.summary
     };
     if (smart_reading_list.id) {
@@ -59,8 +59,8 @@ export class SmartReadingListService {
     } else {
       const params = new HttpParams()
         .set('name', smart_reading_list.name)
-        .set('summary', smart_reading_list.summary)
-        .set('entries', entries.toString());
+        .set('summary', smart_reading_list.summary);
+        // .set('entries', entries.toString());
       return this.http.post(interpolate(CREATE_SMART_READING_LIST_URL), params);
     }
   }

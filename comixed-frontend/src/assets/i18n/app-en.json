@@ -513,6 +513,18 @@
       "new-smart-reading-list": "New Smart List"
     }
   },
+  "smart-reading-list-page": {
+    "label": {
+      "name": "Smart List Name",
+      "summary": "Summary"
+    },
+    "text": {
+      "name-placeholder": "Enter a unique name..."
+    },
+    "button": {
+      "save": "Save Smart List"
+    }
+  },
   "user-effects": {
     "login": {
       "summary": {

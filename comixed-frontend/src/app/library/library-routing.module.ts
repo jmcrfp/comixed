@@ -27,6 +27,7 @@ import { MultiComicScrapingPageComponent } from 'app/library/pages/multi-comic-s
 import { ReadingListPageComponent } from 'app/library/pages/reading-list-page/reading-list-page.component';
 import { ReadingListsPageComponent } from 'app/library/pages/reading-lists-page/reading-lists-page.component';
 import { SmartReadingListsPageComponent } from 'app/library/pages/smart-reading-lists-page/smart-reading-lists-page.component';
+import { SmartReadingListPageComponent } from 'app/library/pages/smart-reading-list-page/smart-reading-list-page.component';
 import { AdminGuard, ReaderGuard } from 'app/user';
 
 const routes: Routes = [
@@ -73,6 +74,16 @@ const routes: Routes = [
   {
     path: 'smartlists',
     component: SmartReadingListsPageComponent,
+    canActivate: [ReaderGuard]
+  },
+  {
+    path: 'smartlists/new',
+    component: SmartReadingListPageComponent,
+    canActivate: [ReaderGuard]
+  },
+  {
+    path: 'smartlists/:id',
+    component: SmartReadingListPageComponent,
     canActivate: [ReaderGuard]
   },
   {
